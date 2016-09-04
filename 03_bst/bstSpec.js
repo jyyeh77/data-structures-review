@@ -105,7 +105,7 @@ describe('binarySearchTree', function() {
   });
 
   // helpful when tree levels have meaning (org chart? DOM elements?)
-  xit('runs breadth-first when breadthFirstForEach() is run', function() {
+  it('runs breadth-first when breadthFirstForEach() is run', function() {
     valuesToInsert.forEach(function(value){
         tree.insert(value);
     });

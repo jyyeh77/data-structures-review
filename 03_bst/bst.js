@@ -42,7 +42,14 @@ BinarySearchTree.prototype.depthFirstForEach = function(callback){
 }
 
 BinarySearchTree.prototype.breadthFirstForEach = function(callback){
-
+  let queue = [];
+  queue.push(this);
+  while (queue.length > 0){
+    callback(queue[0].value);
+    let currentNode = queue.shift();
+    if (currentNode.left) queue.push(currentNode.left);
+    if (currentNode.right) queue.push(currentNode.right);
+  }
 }
 
 BinarySearchTree.prototype.size = function(){
